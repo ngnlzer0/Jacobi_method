@@ -118,8 +118,10 @@ $(function(){initNavTree('_main_8cpp.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a4ed70161351e769a7a9dede87d8c1bde" id="r_a4ed70161351e769a7a9dede87d8c1bde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ed70161351e769a7a9dede87d8c1bde">generate_html_table_from_dat</a> (const std::string &amp;inputFile, const std::string &amp;outputFile, double E)</td></tr>
+<tr class="memdesc:a4ed70161351e769a7a9dede87d8c1bde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates an HTML table from the testing results stored in a .dat file.  <br /></td></tr>
 <tr class="separator:a4ed70161351e769a7a9dede87d8c1bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f9ddd84dfeeeeb7c8e27b4ff17e782c" id="r_a9f9ddd84dfeeeeb7c8e27b4ff17e782c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f9ddd84dfeeeeb7c8e27b4ff17e782c">run_tests_and_plot</a> ()</td></tr>
+<tr class="memdesc:a9f9ddd84dfeeeeb7c8e27b4ff17e782c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs performance tests for the Jacobi method and generates the corresponding results and plots.  <br /></td></tr>
 <tr class="separator:a9f9ddd84dfeeeeb7c8e27b4ff17e782c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,6 +150,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Generates an HTML table from the testing results stored in a .dat file. </p>
+<p>This function reads data from the input .dat file and creates an HTML table displaying the results. The table contains columns for the matrix size (n), execution time of the single-threaded method, execution time of the multi-threaded method, and the time difference between them. The results are written to the output HTML file specified in the <code>outputFile</code> parameter.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputFile</td><td>Path to the input .dat file containing the testing data. </td></tr>
+    <tr><td class="paramname">outputFile</td><td>Path to the output file where the HTML table will be saved. </td></tr>
+    <tr><td class="paramname">E</td><td>The maximum error, which will be displayed in the table header. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -182,6 +195,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Runs performance tests for the Jacobi method and generates the corresponding results and plots. </p>
+<p>This function performs the following tasks:</p><ol type="1">
+<li>Runs the Jacobi method using both single-threaded and multi-threaded approaches for various matrix sizes.</li>
+<li>Measures the execution time for each approach and calculates the speedup.</li>
+<li>Outputs the results (execution times and speedup) to a .dat file.</li>
+<li>Generates a Gnuplot script to visualize the execution times and speedup for both methods.</li>
+<li>Automatically runs the Gnuplot script to generate a plot image.</li>
+<li>Generates an HTML table displaying the results of the tests.</li>
+</ol>
+<dl class="section note"><dt>Note</dt><dd>The maximum error value <code>E</code> is provided as an input parameter to control the precision of the calculations.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">E</td><td>The maximum error for the Jacobi method, which affects the precision of the iterations. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

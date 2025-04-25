@@ -11,9 +11,9 @@
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{_main_8cpp_a4ed70161351e769a7a9dede87d8c1bde}{generate\+\_\+html\+\_\+table\+\_\+from\+\_\+dat}} (const std\+::string \&input\+File, const std\+::string \&output\+File, double E)
-\item 
+\begin{DoxyCompactList}\small\item\em Generates an HTML table from the testing results stored in a .dat file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_main_8cpp_a9f9ddd84dfeeeeb7c8e27b4ff17e782c}{run\+\_\+tests\+\_\+and\+\_\+plot}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Runs performance tests for the Jacobi method and generates the corresponding results and plots. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{_main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \end{DoxyCompactItemize}
 
@@ -25,6 +25,21 @@ int \mbox{\hyperlink{_main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 {\footnotesize\ttfamily \label{_main_8cpp_a4ed70161351e769a7a9dede87d8c1bde} 
 void generate\+\_\+html\+\_\+table\+\_\+from\+\_\+dat (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input\+File}{, }\item[{const std\+::string \&}]{output\+File}{, }\item[{double}]{E}{}\end{DoxyParamCaption})}
 
+
+
+Generates an HTML table from the testing results stored in a .dat file. 
+
+This function reads data from the input .dat file and creates an HTML table displaying the results. The table contains columns for the matrix size (n), execution time of the single-\/threaded method, execution time of the multi-\/threaded method, and the time difference between them. The results are written to the output HTML file specified in the {\ttfamily output\+File} parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & Path to the input .dat file containing the testing data. \\
+\hline
+{\em output\+File} & Path to the output file where the HTML table will be saved. \\
+\hline
+{\em E} & The maximum error, which will be displayed in the table header. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{_main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{Main.cpp@{Main.cpp}!main@{main}}
 \index{main@{main}!Main.cpp@{Main.cpp}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
@@ -37,3 +52,25 @@ int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 {\footnotesize\ttfamily \label{_main_8cpp_a9f9ddd84dfeeeeb7c8e27b4ff17e782c} 
 void run\+\_\+tests\+\_\+and\+\_\+plot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Runs performance tests for the Jacobi method and generates the corresponding results and plots. 
+
+This function performs the following tasks\+:
+\begin{DoxyEnumerate}
+\item Runs the Jacobi method using both single-\/threaded and multi-\/threaded approaches for various matrix sizes.
+\item Measures the execution time for each approach and calculates the speedup.
+\item Outputs the results (execution times and speedup) to a .dat file.
+\item Generates a Gnuplot script to visualize the execution times and speedup for both methods.
+\item Automatically runs the Gnuplot script to generate a plot image.
+\item Generates an HTML table displaying the results of the tests.
+\end{DoxyEnumerate}
+
+\begin{DoxyNote}{Note}
+The maximum error value {\ttfamily E} is provided as an input parameter to control the precision of the calculations.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em E} & The maximum error for the Jacobi method, which affects the precision of the iterations. \\
+\hline
+\end{DoxyParams}
