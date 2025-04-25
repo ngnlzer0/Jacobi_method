@@ -1,0 +1,133 @@
+\doxysection{thread\+\_\+jacobi Class Reference}
+\hypertarget{classthread__jacobi}{}\label{classthread__jacobi}\index{thread\_jacobi@{thread\_jacobi}}
+
+
+Multi-\/threaded implementation of the Jacobi method.  
+
+
+
+
+{\ttfamily \#include $<$thread\+\_\+jacobi.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classthread__jacobi_a3d01a96552aacac3aa0e21ac7944bc98}{thread\+\_\+jacobi}} (const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&a, const std\+::vector$<$ double $>$ \&b)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes matrix A and vector B. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classthread__jacobi_abcba74f66e36771c98d9ee72d1fca6fd}{jacobi\+\_\+method}} (double tolerance)
+\begin{DoxyCompactList}\small\item\em Solves the system using the Jacobi iterative method. \end{DoxyCompactList}\item 
+const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{classthread__jacobi_aea76ee69b42e62dbba2471e936c860f7}{Get\+\_\+x}} () const
+\begin{DoxyCompactList}\small\item\em Returns the computed solution vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classthread__jacobi_ab7185c7a4b6430397cc9bcbf82b663e6}{A}}
+\begin{DoxyCompactList}\small\item\em Coefficient matrix A. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classthread__jacobi_ab9d87a81c72848f63bc58b04ed904de4}{B}}
+\begin{DoxyCompactList}\small\item\em Vector of free terms B. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classthread__jacobi_ad979f65f7e05dec74900961bd14c3954}{x\+\_\+res}}
+\begin{DoxyCompactList}\small\item\em Solution vector. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classthread__jacobi_a2c2b38264875af36392702da37e67ec6}{size}}
+\begin{DoxyCompactList}\small\item\em Size of matrix and vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Multi-\/threaded implementation of the Jacobi method. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classthread__jacobi_a3d01a96552aacac3aa0e21ac7944bc98}\index{thread\_jacobi@{thread\_jacobi}!thread\_jacobi@{thread\_jacobi}}
+\index{thread\_jacobi@{thread\_jacobi}!thread\_jacobi@{thread\_jacobi}}
+\doxysubsubsection{\texorpdfstring{thread\_jacobi()}{thread\_jacobi()}}
+{\footnotesize\ttfamily \label{classthread__jacobi_a3d01a96552aacac3aa0e21ac7944bc98} 
+thread\+\_\+jacobi\+::thread\+\_\+jacobi (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&}]{a}{, }\item[{const std\+::vector$<$ double $>$ \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Constructor that initializes matrix A and vector B. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Coefficient matrix A \\
+\hline
+{\em b} & Vector of free terms B \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classthread__jacobi_aea76ee69b42e62dbba2471e936c860f7}\index{thread\_jacobi@{thread\_jacobi}!Get\_x@{Get\_x}}
+\index{Get\_x@{Get\_x}!thread\_jacobi@{thread\_jacobi}}
+\doxysubsubsection{\texorpdfstring{Get\_x()}{Get\_x()}}
+{\footnotesize\ttfamily \label{classthread__jacobi_aea76ee69b42e62dbba2471e936c860f7} 
+const std\+::vector$<$ double $>$ \& thread\+\_\+jacobi\+::\+Get\+\_\+x (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the computed solution vector. 
+
+\begin{DoxyReturn}{Returns}
+Constant reference to the solution vector X 
+\end{DoxyReturn}
+\Hypertarget{classthread__jacobi_abcba74f66e36771c98d9ee72d1fca6fd}\index{thread\_jacobi@{thread\_jacobi}!jacobi\_method@{jacobi\_method}}
+\index{jacobi\_method@{jacobi\_method}!thread\_jacobi@{thread\_jacobi}}
+\doxysubsubsection{\texorpdfstring{jacobi\_method()}{jacobi\_method()}}
+{\footnotesize\ttfamily \label{classthread__jacobi_abcba74f66e36771c98d9ee72d1fca6fd} 
+void thread\+\_\+jacobi\+::jacobi\+\_\+method (\begin{DoxyParamCaption}\item[{double}]{tolerance}{}\end{DoxyParamCaption})}
+
+
+
+Solves the system using the Jacobi iterative method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tolerance} & Desired tolerance for convergence \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classthread__jacobi_ab7185c7a4b6430397cc9bcbf82b663e6}\index{thread\_jacobi@{thread\_jacobi}!A@{A}}
+\index{A@{A}!thread\_jacobi@{thread\_jacobi}}
+\doxysubsubsection{\texorpdfstring{A}{A}}
+{\footnotesize\ttfamily \label{classthread__jacobi_ab7185c7a4b6430397cc9bcbf82b663e6} 
+std\+::vector$<$std\+::vector$<$double$>$ $>$ thread\+\_\+jacobi\+::A\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Coefficient matrix A. 
+
+\Hypertarget{classthread__jacobi_ab9d87a81c72848f63bc58b04ed904de4}\index{thread\_jacobi@{thread\_jacobi}!B@{B}}
+\index{B@{B}!thread\_jacobi@{thread\_jacobi}}
+\doxysubsubsection{\texorpdfstring{B}{B}}
+{\footnotesize\ttfamily \label{classthread__jacobi_ab9d87a81c72848f63bc58b04ed904de4} 
+std\+::vector$<$double$>$ thread\+\_\+jacobi\+::B\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector of free terms B. 
+
+\Hypertarget{classthread__jacobi_a2c2b38264875af36392702da37e67ec6}\index{thread\_jacobi@{thread\_jacobi}!size@{size}}
+\index{size@{size}!thread\_jacobi@{thread\_jacobi}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \label{classthread__jacobi_a2c2b38264875af36392702da37e67ec6} 
+int thread\+\_\+jacobi\+::size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Size of matrix and vectors. 
+
+\Hypertarget{classthread__jacobi_ad979f65f7e05dec74900961bd14c3954}\index{thread\_jacobi@{thread\_jacobi}!x\_res@{x\_res}}
+\index{x\_res@{x\_res}!thread\_jacobi@{thread\_jacobi}}
+\doxysubsubsection{\texorpdfstring{x\_res}{x\_res}}
+{\footnotesize\ttfamily \label{classthread__jacobi_ad979f65f7e05dec74900961bd14c3954} 
+std\+::vector$<$double$>$ thread\+\_\+jacobi\+::x\+\_\+res\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Solution vector. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{thread__jacobi_8h}{thread\+\_\+jacobi.\+h}}\end{DoxyCompactItemize}

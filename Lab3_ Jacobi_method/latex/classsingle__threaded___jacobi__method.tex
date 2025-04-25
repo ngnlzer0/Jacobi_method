@@ -1,0 +1,242 @@
+\doxysection{single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method Class Reference}
+\hypertarget{classsingle__threaded___jacobi__method}{}\label{classsingle__threaded___jacobi__method}\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+
+
+Single-\/threaded implementation of the Jacobi iterative method.  
+
+
+
+
+{\ttfamily \#include $<$single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsingle__threaded___jacobi__method_a887ab795cc560d3412f4d975c95797a8}{single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsingle__threaded___jacobi__method_a7aa906917f29bc7b67a58b6cd87c6ff4}{single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ a, std\+::vector$<$ double $>$ b, int size)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsingle__threaded___jacobi__method_a25a0458cee60d7a0666dec5d6b44f2da}{Main\+\_\+method}} (double epsilon)
+\begin{DoxyCompactList}\small\item\em Performs the Jacobi iterative algorithm to solve the system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsingle__threaded___jacobi__method_a5de8d9843f51e5cd9eaa57146617cb17}{ShowX}} ()
+\begin{DoxyCompactList}\small\item\em Displays the current solution vector X. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsingle__threaded___jacobi__method_a14bd92bf6732c564843b56ce0a211664}{Check\+\_\+working\+\_\+method}} ()
+\begin{DoxyCompactList}\small\item\em Checks if matrix A is diagonally dominant. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classsingle__threaded___jacobi__method_a88e7f050f9b5c09e3b39ef7f8691909c}{Get\+\_\+\+Xi}} (int i)
+\begin{DoxyCompactList}\small\item\em Gets the value of X\mbox{[}i\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsingle__threaded___jacobi__method_ade82f60aa9274c93af69d24316bc4090}{decoupling}} ()
+\begin{DoxyCompactList}\small\item\em Splits matrix A into matrices R (diagonal) and D (off-\/diagonal). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classsingle__threaded___jacobi__method_a4b35334b77378350aec169141c5cb7f5}{SumR}} (int i, std\+::vector$<$ double $>$ \&x)
+\begin{DoxyCompactList}\small\item\em Calculates the sum of R\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} \texorpdfstring{$\ast$}{*} x\mbox{[}j\mbox{]} for a given row i. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classsingle__threaded___jacobi__method_aa553bc240e44007d33c74e8bdbd041e7}{A}}
+\begin{DoxyCompactList}\small\item\em Coefficient matrix A. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsingle__threaded___jacobi__method_a3710933b0244db1e2ee016e6adb87b40}{X}}
+\begin{DoxyCompactList}\small\item\em Solution vector X. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classsingle__threaded___jacobi__method_a960a13e02d3c778e87639efaf533df6b}{B}}
+\begin{DoxyCompactList}\small\item\em Vector of free terms B. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classsingle__threaded___jacobi__method_a1163e9bc85f6701007e55cebe91337c8}{R}}
+\begin{DoxyCompactList}\small\item\em Matrix R with diagonal elements from A. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classsingle__threaded___jacobi__method_af7779e4a9a5bbcdf21d759536fd82ad0}{D}}
+\begin{DoxyCompactList}\small\item\em Matrix D with off-\/diagonal elements from A. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsingle__threaded___jacobi__method_a033eb37bdd6393d228a0d213c4cd720a}{SIZE}}
+\begin{DoxyCompactList}\small\item\em Number of unknowns. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Single-\/threaded implementation of the Jacobi iterative method. 
+
+Approximates solutions for systems of linear equations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsingle__threaded___jacobi__method_a887ab795cc560d3412f4d975c95797a8}\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}!single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}!single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+\doxysubsubsection{\texorpdfstring{single\_threaded\_Jacobi\_method()}{single\_threaded\_Jacobi\_method()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classsingle__threaded___jacobi__method_a887ab795cc560d3412f4d975c95797a8} 
+single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method\+::single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\Hypertarget{classsingle__threaded___jacobi__method_a7aa906917f29bc7b67a58b6cd87c6ff4}\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}!single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}!single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+\doxysubsubsection{\texorpdfstring{single\_threaded\_Jacobi\_method()}{single\_threaded\_Jacobi\_method()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classsingle__threaded___jacobi__method_a7aa906917f29bc7b67a58b6cd87c6ff4} 
+single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method\+::single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{a}{, }\item[{std\+::vector$<$ double $>$}]{b}{, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Coefficient matrix A \\
+\hline
+{\em b} & Vector of free terms B \\
+\hline
+{\em size} & Size of the system \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsingle__threaded___jacobi__method_a14bd92bf6732c564843b56ce0a211664}\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}!Check\_working\_method@{Check\_working\_method}}
+\index{Check\_working\_method@{Check\_working\_method}!single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+\doxysubsubsection{\texorpdfstring{Check\_working\_method()}{Check\_working\_method()}}
+{\footnotesize\ttfamily \label{classsingle__threaded___jacobi__method_a14bd92bf6732c564843b56ce0a211664} 
+bool single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method\+::\+Check\+\_\+working\+\_\+method (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks if matrix A is diagonally dominant. 
+
+\begin{DoxyReturn}{Returns}
+True if the matrix is diagonally dominant, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classsingle__threaded___jacobi__method_ade82f60aa9274c93af69d24316bc4090}\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}!decoupling@{decoupling}}
+\index{decoupling@{decoupling}!single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+\doxysubsubsection{\texorpdfstring{decoupling()}{decoupling()}}
+{\footnotesize\ttfamily \label{classsingle__threaded___jacobi__method_ade82f60aa9274c93af69d24316bc4090} 
+void single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method\+::decoupling (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Splits matrix A into matrices R (diagonal) and D (off-\/diagonal). 
+
+\Hypertarget{classsingle__threaded___jacobi__method_a88e7f050f9b5c09e3b39ef7f8691909c}\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}!Get\_Xi@{Get\_Xi}}
+\index{Get\_Xi@{Get\_Xi}!single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+\doxysubsubsection{\texorpdfstring{Get\_Xi()}{Get\_Xi()}}
+{\footnotesize\ttfamily \label{classsingle__threaded___jacobi__method_a88e7f050f9b5c09e3b39ef7f8691909c} 
+double single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method\+::\+Get\+\_\+\+Xi (\begin{DoxyParamCaption}\item[{int}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the value of X\mbox{[}i\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Index in the solution vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value at index i 
+\end{DoxyReturn}
+\Hypertarget{classsingle__threaded___jacobi__method_a25a0458cee60d7a0666dec5d6b44f2da}\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}!Main\_method@{Main\_method}}
+\index{Main\_method@{Main\_method}!single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+\doxysubsubsection{\texorpdfstring{Main\_method()}{Main\_method()}}
+{\footnotesize\ttfamily \label{classsingle__threaded___jacobi__method_a25a0458cee60d7a0666dec5d6b44f2da} 
+virtual void single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method\+::\+Main\+\_\+method (\begin{DoxyParamCaption}\item[{double}]{epsilon}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Performs the Jacobi iterative algorithm to solve the system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em epsilon} & Desired accuracy \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsingle__threaded___jacobi__method_a5de8d9843f51e5cd9eaa57146617cb17}\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}!ShowX@{ShowX}}
+\index{ShowX@{ShowX}!single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+\doxysubsubsection{\texorpdfstring{ShowX()}{ShowX()}}
+{\footnotesize\ttfamily \label{classsingle__threaded___jacobi__method_a5de8d9843f51e5cd9eaa57146617cb17} 
+void single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method\+::\+ShowX (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the current solution vector X. 
+
+\Hypertarget{classsingle__threaded___jacobi__method_a4b35334b77378350aec169141c5cb7f5}\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}!SumR@{SumR}}
+\index{SumR@{SumR}!single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+\doxysubsubsection{\texorpdfstring{SumR()}{SumR()}}
+{\footnotesize\ttfamily \label{classsingle__threaded___jacobi__method_a4b35334b77378350aec169141c5cb7f5} 
+double single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method\+::\+SumR (\begin{DoxyParamCaption}\item[{int}]{i}{, }\item[{std\+::vector$<$ double $>$ \&}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Calculates the sum of R\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} \texorpdfstring{$\ast$}{*} x\mbox{[}j\mbox{]} for a given row i. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Index of the row \\
+\hline
+{\em x} & Current approximation of the solution \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sum of products for the ith row 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsingle__threaded___jacobi__method_aa553bc240e44007d33c74e8bdbd041e7}\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}!A@{A}}
+\index{A@{A}!single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+\doxysubsubsection{\texorpdfstring{A}{A}}
+{\footnotesize\ttfamily \label{classsingle__threaded___jacobi__method_aa553bc240e44007d33c74e8bdbd041e7} 
+std\+::vector$<$std\+::vector$<$double$>$ $>$ single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method\+::A\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Coefficient matrix A. 
+
+\Hypertarget{classsingle__threaded___jacobi__method_a960a13e02d3c778e87639efaf533df6b}\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}!B@{B}}
+\index{B@{B}!single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+\doxysubsubsection{\texorpdfstring{B}{B}}
+{\footnotesize\ttfamily \label{classsingle__threaded___jacobi__method_a960a13e02d3c778e87639efaf533df6b} 
+std\+::vector$<$double$>$ single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method\+::B\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vector of free terms B. 
+
+\Hypertarget{classsingle__threaded___jacobi__method_af7779e4a9a5bbcdf21d759536fd82ad0}\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}!D@{D}}
+\index{D@{D}!single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+\doxysubsubsection{\texorpdfstring{D}{D}}
+{\footnotesize\ttfamily \label{classsingle__threaded___jacobi__method_af7779e4a9a5bbcdf21d759536fd82ad0} 
+std\+::vector$<$std\+::vector$<$double$>$ $>$ single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method\+::D\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Matrix D with off-\/diagonal elements from A. 
+
+\Hypertarget{classsingle__threaded___jacobi__method_a1163e9bc85f6701007e55cebe91337c8}\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}!R@{R}}
+\index{R@{R}!single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+\doxysubsubsection{\texorpdfstring{R}{R}}
+{\footnotesize\ttfamily \label{classsingle__threaded___jacobi__method_a1163e9bc85f6701007e55cebe91337c8} 
+std\+::vector$<$std\+::vector$<$double$>$ $>$ single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method\+::R\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Matrix R with diagonal elements from A. 
+
+\Hypertarget{classsingle__threaded___jacobi__method_a033eb37bdd6393d228a0d213c4cd720a}\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}!SIZE@{SIZE}}
+\index{SIZE@{SIZE}!single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+\doxysubsubsection{\texorpdfstring{SIZE}{SIZE}}
+{\footnotesize\ttfamily \label{classsingle__threaded___jacobi__method_a033eb37bdd6393d228a0d213c4cd720a} 
+int single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method\+::\+SIZE\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of unknowns. 
+
+\Hypertarget{classsingle__threaded___jacobi__method_a3710933b0244db1e2ee016e6adb87b40}\index{single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}!X@{X}}
+\index{X@{X}!single\_threaded\_Jacobi\_method@{single\_threaded\_Jacobi\_method}}
+\doxysubsubsection{\texorpdfstring{X}{X}}
+{\footnotesize\ttfamily \label{classsingle__threaded___jacobi__method_a3710933b0244db1e2ee016e6adb87b40} 
+std\+::vector$<$double$>$ single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method\+::X\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Solution vector X. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{single__threaded___jacobi__method_8h}{single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method.\+h}}\end{DoxyCompactItemize}

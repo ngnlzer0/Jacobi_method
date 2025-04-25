@@ -1,0 +1,24 @@
+\doxysection{thread\+\_\+jacobi.\+h}
+\hypertarget{thread__jacobi_8h_source}{}\label{thread__jacobi_8h_source}\mbox{\hyperlink{thread__jacobi_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classthread__jacobi_a3d01a96552aacac3aa0e21ac7944bc98}{thread\_jacobi}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ std::vector<std::vector<double>>\ \mbox{\hyperlink{classthread__jacobi_ab7185c7a4b6430397cc9bcbf82b663e6}{A}};\ \ \ \ \ \ }
+\DoxyCodeLine{00011\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classthread__jacobi_ab9d87a81c72848f63bc58b04ed904de4}{B}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classthread__jacobi_ad979f65f7e05dec74900961bd14c3954}{x\_res}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classthread__jacobi_a2c2b38264875af36392702da37e67ec6}{size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classthread__jacobi_a3d01a96552aacac3aa0e21ac7944bc98}{thread\_jacobi}}(\textcolor{keyword}{const}\ std::vector<std::vector<double>>\&\ a,\ \textcolor{keyword}{const}\ std::vector<double>\&\ b);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classthread__jacobi_abcba74f66e36771c98d9ee72d1fca6fd}{jacobi\_method}}(\textcolor{keywordtype}{double}\ tolerance);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ \mbox{\hyperlink{classthread__jacobi_aea76ee69b42e62dbba2471e936c860f7}{Get\_x}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+
+\end{DoxyCode}

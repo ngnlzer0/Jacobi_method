@@ -1,0 +1,73 @@
+\doxysection{utils.\+hpp}
+\hypertarget{utils_8hpp_source}{}\label{utils_8hpp_source}\mbox{\hyperlink{utils_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a}{ulong}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{utils_8hpp_a15f585496cb2ca69c3d95c906be2ac95}{solution\_find}}(\textcolor{keyword}{const}\ std::vector<double>\&\ row,\ \textcolor{keyword}{const}\ std::vector<double>\&\ solutions,\ \textcolor{keywordtype}{double}\ term,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a}{ulong}}\ index)}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#pragma\ simd}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ row.size();\ ++j)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ term\ -\/=\ (solutions[j]\ *\ row[j]);}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{return}\ (term\ +\ (solutions[index]\ *\ row[index]))\ /\ row[index];}
+\DoxyCodeLine{00026\ \}}
+\DoxyCodeLine{00031\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{utils_8hpp_a64f1dd7dc1aaab90b90bdb90ebc42ca0}{print\_solution}}(\textcolor{keyword}{const}\ std::vector<double>\&\ solution)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ solution.size();\ ++i)\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}X["{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{}]\ =\ "{}}\ <<\ solution[i]\ <<\ std::endl;}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00043\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00044\ T\ \mbox{\hyperlink{utils_8hpp_a99a742275128c4af76f858f620a2c791}{rand\_t}}(T\ min,\ T\ max)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ T\ range\ =\ max\ -\/\ min;}
+\DoxyCodeLine{00046\ \ \ \ \ T\ r\ =\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(rand())\ /\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(RAND\_MAX);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ r\ *\ range\ +\ min;}
+\DoxyCodeLine{00048\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{utils_8hpp_a5557d3c965525c4e54388249e73386da}{generate\_vector}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a}{ulong}}\ size,\ std::vector<T>\&\ v,\ \textcolor{keyword}{const}\ T\ min,\ \textcolor{keyword}{const}\ T\ max)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a}{ulong}}\ i\ =\ 0;\ i\ <\ size;\ ++i)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ v.emplace\_back(\mbox{\hyperlink{utils_8hpp_a99a742275128c4af76f858f620a2c791}{rand\_t}}(min,\ max));}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ \ \ \ \ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00074\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{utils_8hpp_accc35470b87347224f889934901eb1ff}{generate\_diagonal\_dominant\_matrix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a}{ulong}}\ size,\ std::vector<std::vector<T>>\&\ matrix,}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{const}\ T\ min,\ \textcolor{keyword}{const}\ T\ max)\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a}{ulong}}\ i\ =\ 0;\ i\ <\ size;\ ++i)\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ std::vector<T>\ row;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{utils_8hpp_a5557d3c965525c4e54388249e73386da}{generate\_vector}}(size,\ row,\ min,\ max);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ matrix.emplace\_back(row);}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a}{ulong}}\ i\ =\ 0;\ i\ <\ size;\ ++i)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ T\ sum\ =\ T(0);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ val\ :\ matrix[i])\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ std::abs(val);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ sum\ -\/=\ std::abs(matrix[i][i]);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ matrix[i][i]\ =\ std::abs(matrix[i][i])\ +\ sum;\ \textcolor{comment}{//\ ensure\ diagonal\ dominance}}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00101\ T\ \mbox{\hyperlink{utils_8hpp_a72fabafd109c9be37b23f45ff4d5ea2a}{check\_error}}(\textcolor{keyword}{const}\ std::vector<std::vector<T>>\&\ matrix,\ \textcolor{keyword}{const}\ std::vector<T>\&\ terms,\ \textcolor{keyword}{const}\ std::vector<T>\&\ solution)\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ T\ error\ =\ T(0);}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ matrix.size();\ ++i)\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ T\ diff\ =\ terms[i];}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ matrix[i].size();\ ++j)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ diff\ -\/=\ matrix[i][j]\ *\ solution[j];\ \textcolor{comment}{//\ compute\ Ax\ -\/\ b}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ error\ +=\ std::abs(diff);}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{return}\ error;}
+\DoxyCodeLine{00111\ \}}
+
+\end{DoxyCode}

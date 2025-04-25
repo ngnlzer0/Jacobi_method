@@ -1,0 +1,34 @@
+\doxysection{single\+\_\+threaded\+\_\+\+Jacobi\+\_\+method.\+h}
+\hypertarget{single__threaded___jacobi__method_8h_source}{}\label{single__threaded___jacobi__method_8h_source}\mbox{\hyperlink{single__threaded___jacobi__method_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsingle__threaded___jacobi__method_a887ab795cc560d3412f4d975c95797a8}{single\_threaded\_Jacobi\_method}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00011\ \ \ \ \ std::vector<std::vector<double>>\ \mbox{\hyperlink{classsingle__threaded___jacobi__method_aa553bc240e44007d33c74e8bdbd041e7}{A}};\ \ \ \ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classsingle__threaded___jacobi__method_a3710933b0244db1e2ee016e6adb87b40}{X}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classsingle__threaded___jacobi__method_a960a13e02d3c778e87639efaf533df6b}{B}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ std::vector<std::vector<double>>\ \mbox{\hyperlink{classsingle__threaded___jacobi__method_a1163e9bc85f6701007e55cebe91337c8}{R}};\ \ \ \ \ \ }
+\DoxyCodeLine{00015\ \ \ \ \ std::vector<std::vector<double>>\ \mbox{\hyperlink{classsingle__threaded___jacobi__method_af7779e4a9a5bbcdf21d759536fd82ad0}{D}};\ \ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsingle__threaded___jacobi__method_a033eb37bdd6393d228a0d213c4cd720a}{SIZE}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsingle__threaded___jacobi__method_ade82f60aa9274c93af69d24316bc4090}{decoupling}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classsingle__threaded___jacobi__method_a4b35334b77378350aec169141c5cb7f5}{SumR}}(\textcolor{keywordtype}{int}\ i,\ std::vector<double>\&\ x);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classsingle__threaded___jacobi__method_a887ab795cc560d3412f4d975c95797a8}{single\_threaded\_Jacobi\_method}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classsingle__threaded___jacobi__method_a7aa906917f29bc7b67a58b6cd87c6ff4}{single\_threaded\_Jacobi\_method}}(std::vector<std::vector<double>>\ a,\ std::vector<double>\ b,\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsingle__threaded___jacobi__method_a25a0458cee60d7a0666dec5d6b44f2da}{Main\_method}}(\textcolor{keywordtype}{double}\ epsilon);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsingle__threaded___jacobi__method_a5de8d9843f51e5cd9eaa57146617cb17}{ShowX}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsingle__threaded___jacobi__method_a14bd92bf6732c564843b56ce0a211664}{Check\_working\_method}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classsingle__threaded___jacobi__method_a88e7f050f9b5c09e3b39ef7f8691909c}{Get\_Xi}}(\textcolor{keywordtype}{int}\ i)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classsingle__threaded___jacobi__method_a3710933b0244db1e2ee016e6adb87b40}{X}}[i];\ \};}
+\DoxyCodeLine{00068\ \};}
+
+\end{DoxyCode}

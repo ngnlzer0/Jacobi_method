@@ -1,0 +1,187 @@
+\doxysection{utils.\+hpp File Reference}
+\hypertarget{utils_8hpp}{}\label{utils_8hpp}\index{utils.hpp@{utils.hpp}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned long \mbox{\hyperlink{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a}{ulong}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{utils_8hpp_a15f585496cb2ca69c3d95c906be2ac95}{solution\+\_\+find}} (const std\+::vector$<$ double $>$ \&row, const std\+::vector$<$ double $>$ \&solutions, double term, const \mbox{\hyperlink{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a}{ulong}} index)
+\begin{DoxyCompactList}\small\item\em Calculates next approximation of X\mbox{[}i\mbox{]} using Jacobi formula. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8hpp_a64f1dd7dc1aaab90b90bdb90ebc42ca0}{print\+\_\+solution}} (const std\+::vector$<$ double $>$ \&solution)
+\begin{DoxyCompactList}\small\item\em Prints the solution vector to console. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\T \mbox{\hyperlink{utils_8hpp_a99a742275128c4af76f858f620a2c791}{rand\+\_\+t}} (T min, T max)
+\begin{DoxyCompactList}\small\item\em Generates a random value in a given range. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{utils_8hpp_a5557d3c965525c4e54388249e73386da}{generate\+\_\+vector}} (const \mbox{\hyperlink{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a}{ulong}} size, std\+::vector$<$ T $>$ \&v, const T min, const T max)
+\begin{DoxyCompactList}\small\item\em Fills a vector with random values. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{utils_8hpp_accc35470b87347224f889934901eb1ff}{generate\+\_\+diagonal\+\_\+dominant\+\_\+matrix}} (const \mbox{\hyperlink{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a}{ulong}} size, std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&matrix, const T min, const T max)
+\begin{DoxyCompactList}\small\item\em Generates a diagonally dominant matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\T \mbox{\hyperlink{utils_8hpp_a72fabafd109c9be37b23f45ff4d5ea2a}{check\+\_\+error}} (const std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&matrix, const std\+::vector$<$ T $>$ \&terms, const std\+::vector$<$ T $>$ \&solution)
+\begin{DoxyCompactList}\small\item\em Calculates total absolute error of Ax -\/ b. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a}\index{utils.hpp@{utils.hpp}!ulong@{ulong}}
+\index{ulong@{ulong}!utils.hpp@{utils.hpp}}
+\doxysubsubsection{\texorpdfstring{ulong}{ulong}}
+{\footnotesize\ttfamily \label{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a} 
+typedef unsigned long \mbox{\hyperlink{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a}{ulong}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{utils_8hpp_a72fabafd109c9be37b23f45ff4d5ea2a}\index{utils.hpp@{utils.hpp}!check\_error@{check\_error}}
+\index{check\_error@{check\_error}!utils.hpp@{utils.hpp}}
+\doxysubsubsection{\texorpdfstring{check\_error()}{check\_error()}}
+{\footnotesize\ttfamily \label{utils_8hpp_a72fabafd109c9be37b23f45ff4d5ea2a} 
+template$<$typename T$>$ \\
+T check\+\_\+error (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&}]{matrix}{, }\item[{const std\+::vector$<$ T $>$ \&}]{terms}{, }\item[{const std\+::vector$<$ T $>$ \&}]{solution}{}\end{DoxyParamCaption})}
+
+
+
+Calculates total absolute error of Ax -\/ b. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of numeric values \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & Matrix A \\
+\hline
+{\em terms} & Vector B \\
+\hline
+{\em solution} & Solution vector X \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Total absolute error 
+\end{DoxyReturn}
+\Hypertarget{utils_8hpp_accc35470b87347224f889934901eb1ff}\index{utils.hpp@{utils.hpp}!generate\_diagonal\_dominant\_matrix@{generate\_diagonal\_dominant\_matrix}}
+\index{generate\_diagonal\_dominant\_matrix@{generate\_diagonal\_dominant\_matrix}!utils.hpp@{utils.hpp}}
+\doxysubsubsection{\texorpdfstring{generate\_diagonal\_dominant\_matrix()}{generate\_diagonal\_dominant\_matrix()}}
+{\footnotesize\ttfamily \label{utils_8hpp_accc35470b87347224f889934901eb1ff} 
+template$<$typename T$>$ \\
+void generate\+\_\+diagonal\+\_\+dominant\+\_\+matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a}{ulong}}}]{size}{, }\item[{std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&}]{matrix}{, }\item[{const T}]{min}{, }\item[{const T}]{max}{}\end{DoxyParamCaption})}
+
+
+
+Generates a diagonally dominant matrix. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of matrix elements \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Dimension of the matrix \\
+\hline
+{\em matrix} & Matrix to fill \\
+\hline
+{\em min} & Minimum value \\
+\hline
+{\em max} & Maximum value \\
+\hline
+\end{DoxyParams}
+\Hypertarget{utils_8hpp_a5557d3c965525c4e54388249e73386da}\index{utils.hpp@{utils.hpp}!generate\_vector@{generate\_vector}}
+\index{generate\_vector@{generate\_vector}!utils.hpp@{utils.hpp}}
+\doxysubsubsection{\texorpdfstring{generate\_vector()}{generate\_vector()}}
+{\footnotesize\ttfamily \label{utils_8hpp_a5557d3c965525c4e54388249e73386da} 
+template$<$typename T$>$ \\
+void generate\+\_\+vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a}{ulong}}}]{size}{, }\item[{std\+::vector$<$ T $>$ \&}]{v}{, }\item[{const T}]{min}{, }\item[{const T}]{max}{}\end{DoxyParamCaption})}
+
+
+
+Fills a vector with random values. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of vector elements \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Size of the vector \\
+\hline
+{\em v} & Vector to be filled \\
+\hline
+{\em min} & Minimum value \\
+\hline
+{\em max} & Maximum value \\
+\hline
+\end{DoxyParams}
+\Hypertarget{utils_8hpp_a64f1dd7dc1aaab90b90bdb90ebc42ca0}\index{utils.hpp@{utils.hpp}!print\_solution@{print\_solution}}
+\index{print\_solution@{print\_solution}!utils.hpp@{utils.hpp}}
+\doxysubsubsection{\texorpdfstring{print\_solution()}{print\_solution()}}
+{\footnotesize\ttfamily \label{utils_8hpp_a64f1dd7dc1aaab90b90bdb90ebc42ca0} 
+void print\+\_\+solution (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{solution}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Prints the solution vector to console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em solution} & The solution vector \\
+\hline
+\end{DoxyParams}
+\Hypertarget{utils_8hpp_a99a742275128c4af76f858f620a2c791}\index{utils.hpp@{utils.hpp}!rand\_t@{rand\_t}}
+\index{rand\_t@{rand\_t}!utils.hpp@{utils.hpp}}
+\doxysubsubsection{\texorpdfstring{rand\_t()}{rand\_t()}}
+{\footnotesize\ttfamily \label{utils_8hpp_a99a742275128c4af76f858f620a2c791} 
+template$<$typename T$>$ \\
+T rand\+\_\+t (\begin{DoxyParamCaption}\item[{T}]{min}{, }\item[{T}]{max}{}\end{DoxyParamCaption})}
+
+
+
+Generates a random value in a given range. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of value \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em min} & Minimum value \\
+\hline
+{\em max} & Maximum value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Random value of type T 
+\end{DoxyReturn}
+\Hypertarget{utils_8hpp_a15f585496cb2ca69c3d95c906be2ac95}\index{utils.hpp@{utils.hpp}!solution\_find@{solution\_find}}
+\index{solution\_find@{solution\_find}!utils.hpp@{utils.hpp}}
+\doxysubsubsection{\texorpdfstring{solution\_find()}{solution\_find()}}
+{\footnotesize\ttfamily \label{utils_8hpp_a15f585496cb2ca69c3d95c906be2ac95} 
+double solution\+\_\+find (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{row}{, }\item[{const std\+::vector$<$ double $>$ \&}]{solutions}{, }\item[{double}]{term}{, }\item[{const \mbox{\hyperlink{utils_8hpp_a718b4eb2652c286f4d42dc18a8e71a1a}{ulong}}}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates next approximation of X\mbox{[}i\mbox{]} using Jacobi formula. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & Row from matrix A (coefficients) \\
+\hline
+{\em solutions} & Previous solution vector X\texorpdfstring{$^\wedge$}{\string^}(k) \\
+\hline
+{\em term} & Value of B\mbox{[}i\mbox{]} \\
+\hline
+{\em index} & Index of the variable being solved \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Updated value of X\mbox{[}i\mbox{]}\texorpdfstring{$^\wedge$}{\string^}(k+1) 
+\end{DoxyReturn}
