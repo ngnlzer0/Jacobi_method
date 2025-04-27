@@ -76,7 +76,7 @@ void generate_html_table_from_dat(const std::string& inputFile, const std::strin
  */
 void run_tests_and_plot() {
     std::vector<int> sizes = { 5, 10, 50, 100,200,500,800, 1000, 1500, 2000,2500,3500, 5000,6500,8500, 10000 };
-    double E = 0.0002;
+    double E = 0.01;
 
     std::filesystem::create_directory("results");
 
