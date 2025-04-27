@@ -21,7 +21,7 @@ especially on small matrices, with larger matrices there +- works fine,
 so it is recommended to use E >= 0.001 for multi-threaded implementation
 
 
-the results of the methods in .dot formats, graphical diagrams, html tables can be seen in the [“RESULT”]() file
+the results of the methods in .dot formats, graphical diagrams, html tables can be seen in the [“RESULT”](https://github.com/ngnlzer0/Jacobi_method/tree/main/Lab3_%20Jacobi_method/results) file
 
 ---
 
@@ -43,7 +43,7 @@ doxygen Doxyfile
 ## 🛠️ Build Instructions
 
 ```bash
-git clone https://github.com/your_username/Jacobi_method.git
+git clone https://github.com/ngnlzer0/Jacobi_method.git
 cd Jacobi_method
 mkdir build
 cd build
