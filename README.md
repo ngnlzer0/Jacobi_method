@@ -5,6 +5,10 @@ Includes performance analysis and visualizations 📈
 
 ---
 
+Description of the Jacobi algorithm on [**Wiki**](https://en.wikipedia.org/wiki/Jacobi_method)
+
+---
+
 ## 📌 Features
 
 - ✅ Classic **Jacobi method** (single-threaded)
