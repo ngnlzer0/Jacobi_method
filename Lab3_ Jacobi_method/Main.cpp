@@ -1,3 +1,5 @@
+#include <filesystem>
+
 #include "doctest.h"
 #include "single_threaded_Jacobi_method.h"
 #include "thread_jacobi.h"
@@ -74,7 +76,9 @@ void generate_html_table_from_dat(const std::string& inputFile, const std::strin
  */
 void run_tests_and_plot() {
     std::vector<int> sizes = { 5, 10, 50, 100,200,500,800, 1000, 1500, 2000,2500,3500, 5000,6500,8500, 10000 };
-    double E = 0.00001;
+    double E = 0.0002;
+
+    std::filesystem::create_directory("results");
 
     std::vector<std::pair<int, double>> single_data;
     std::vector<std::pair<int, double>> multi_data;
@@ -116,7 +120,8 @@ void run_tests_and_plot() {
 
     // Save results to a .dat file
     std::ostringstream dataFileName;
-    dataFileName << std::fixed << std::setprecision(4) << "jacobi_results_E=" << E << ".dat";
+    dataFileName << std::fixed << std::setprecision(4) << "results/jacobi_results_E=" << E << ".dat";
+
     std::ofstream out(dataFileName.str());
     out << "maximum error = " << E << "\n";
     out << "# n\tSingleThreaded\tMultiThreaded\tTimeDifference\n";
@@ -130,9 +135,9 @@ void run_tests_and_plot() {
 
     // 3. Generate a Gnuplot script for plotting the results
     std::ostringstream imageFileName;
-    imageFileName << std::fixed << std::setprecision(4) << "jacobi_plot_E=" << E << ".png";
+    imageFileName << std::fixed << std::setprecision(4) << "results/jacobi_plot_E=" << E << ".png";
 
-    std::ofstream plot("plot.gp");
+    std::ofstream plot("results/plot.gp");
     plot << "set terminal pngcairo size 800,600\n";
     plot << "set output '" << imageFileName.str() << "'\n";
     plot << "set title 'Jacobi Method Execution Time (E=" << E << ")'\n";
@@ -145,11 +150,12 @@ void run_tests_and_plot() {
     plot.close();
 
     // 4. Automatically run Gnuplot to generate the plot image
-    system("gnuplot plot.gp");
+    system("gnuplot results/plot.gp");
+
 
     // 5. Generate an HTML table from the data
     std::ostringstream htmlFileName;
-    htmlFileName << std::fixed << std::setprecision(4) << "jacobi_table_E=" << E << ".html";
+    htmlFileName << std::fixed << std::setprecision(4) << "results/jacobi_table_E=" << E << ".html";
     generate_html_table_from_dat(dataFileName.str(), htmlFileName.str(),E);
 
 }
