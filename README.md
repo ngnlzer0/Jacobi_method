@@ -22,9 +22,9 @@ so it is recommended to use E >= 0.001 for multi-threaded implementation
 
 
 the results of the methods in .dot formats, graphical diagrams, html tables can be seen in the 
-[“RESULT”](https://github.com/ngnlzer0/Jacobi_method/tree/main/Lab3_%20Jacobi_method/results) file
+[“RESULT”](https://github.com/ngnlzer0/Jacobi_method/tree/main/results) file
 or results are drawn up in 1 file 
-[**results_summary**](https://github.com/ngnlzer0/Jacobi_method/blob/main/Lab3_%20Jacobi_method/results/results_summary.md)
+[**results_summary**](https://github.com/ngnlzer0/Jacobi_method/blob/main/results/results_summary.md)
 
 ---
 
